@@ -113,10 +113,10 @@ for week in month_days_list:
             # Build cell style
             if is_selected:
                 border = "2px solid #378ADD"
-                bg = "#1a2535"
+                bg = "#eff6ff"
             elif is_today:
                 border = "2px solid #378ADD"
-                bg = "#1a1d27"
+                bg = "#f0f7ff"
             elif has_trades and day_data["pnl"] >= 0:
                 border = "1px solid rgba(29,158,117,0.4)"
                 bg = "rgba(29,158,117,0.07)"
@@ -124,8 +124,8 @@ for week in month_days_list:
                 border = "1px solid rgba(216,90,48,0.4)"
                 bg = "rgba(216,90,48,0.07)"
             else:
-                border = "1px solid #2a2d3a"
-                bg = "#1a1d27"
+                border = "1px solid #e2e5ef"
+                bg = "#ffffff"
 
             pnl_html = ""
             if has_trades:
@@ -134,12 +134,12 @@ for week in month_days_list:
                 sign = "+" if p >= 0 else ""
                 pnl_html = f"""
                 <div style='color:{color};font-weight:600;font-size:13px;margin-top:4px'>{sign}${p:,.0f}</div>
-                <div style='font-size:10px;color:#666;margin-top:2px'>{int(day_data['count'])} trade{'s' if day_data['count']!=1 else ''}</div>
+                <div style='font-size:10px;color:#9ca3af;margin-top:2px'>{int(day_data['count'])} trade{'s' if day_data['count']!=1 else ''}</div>
                 """
 
             cell_html = f"""
             <div style='background:{bg};border:{border};border-radius:8px;padding:7px;min-height:78px;margin-bottom:2px'>
-                <div style='font-size:11px;color:{"#378ADD" if is_today else "#666"};font-weight:{"600" if is_today else "500"}'>{day.day}</div>
+                <div style='font-size:11px;color:{"#378ADD" if is_today else "#9ca3af"};font-weight:{"600" if is_today else "500"}'>{day.day}</div>
                 {pnl_html}
             </div>
             """
